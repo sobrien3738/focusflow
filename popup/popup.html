@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌊 FocusFlow</h1>
+      <div class="tab-buttons">
+        <button id="tabsBtn" class="tab-btn active">Tabs</button>
+        <button id="timerBtn" class="tab-btn">Timer</button>
+        <button id="blockerBtn" class="tab-btn">Blocker</button>
+      </div>
+    </div>
+
+    <!-- Tab Management Section -->
+    <div id="tabsSection" class="section active">
+      <div class="stats">
+        <span id="tabCount">0 tabs</span>
+        <span id="duplicateCount">0 duplicates</span>
+      </div>
+      
+      <div class="actions">
+        <button id="groupSimilarBtn" class="action-btn">Group Similar</button>
+        <button id="closeDuplicatesBtn" class="action-btn">Close Duplicates</button>
+        <button id="closeRightBtn" class="action-btn">Close All Right</button>
+      </div>
+
+      <div class="tab-list" id="tabList">
+        <!-- Tabs will be populated here -->
+      </div>
+    </div>
+
+    <!-- Pomodoro Timer Section -->
+    <div id="timerSection" class="section">
+      <div class="timer-display">
+        <div class="time" id="timerDisplay">25:00</div>
+        <div class="timer-label" id="timerLabel">Focus Time</div>
+      </div>
+      
+      <div class="timer-controls">
+        <button id="startBtn" class="timer-btn primary">Start</button>
+        <button id="pauseBtn" class="timer-btn">Pause</button>
+        <button id="resetBtn" class="timer-btn">Reset</button>
+      </div>
+      
+      <div class="timer-settings">
+        <div class="setting">
+          <label>Focus: </label>
+          <input type="number" id="focusTime" value="25" min="1" max="60">
+          <span>min</span>
+        </div>
+        <div class="setting">
+          <label>Break: </label>
+          <input type="number" id="breakTime" value="5" min="1" max="30">
+          <span>min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Website Blocker Section -->
+    <div id="blockerSection" class="section">
+      <div class="blocker-status">
+        <label class="toggle">
+          <input type="checkbox" id="blockerToggle">
+          <span class="slider"></span>
+          <span class="toggle-text">Blocker Off</span>
+        </label>
+      </div>
+      
+      <div class="blocked-sites">
+        <h3>Blocked Sites</h3>
+        <div class="site-input">
+          <input type="text" id="siteInput" placeholder="Enter domain (e.g., youtube.com)">
+          <button id="addSiteBtn" class="add-btn">+</button>
+        </div>
+        <div class="site-list" id="siteList">
+          <!-- Blocked sites will appear here -->
+        </div>
+      </div>
+      
+      <div class="quick-blocks">
+        <button class="quick-btn" data-site="facebook.com">Facebook</button>
+        <button class="quick-btn" data-site="twitter.com">Twitter</button>
+        <button class="quick-btn" data-site="youtube.com">YouTube</button>
+        <button class="quick-btn" data-site="reddit.com">Reddit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

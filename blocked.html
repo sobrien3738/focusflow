@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Site Blocked - FocusFlow</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .container {
+      text-align: center;
+      max-width: 500px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      font-weight: 300;
+    }
+    
+    .site-name {
+      font-size: 18px;
+      color: #ffeb3b;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    
+    .message {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: inline-block;
+    }
+    
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+    
+    .btn.primary {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .btn.primary:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    
+    .quote {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-style: italic;
+      opacity: 0.7;
+      font-size: 14px;
+    }
+    
+    .timer-info {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      font-size: 14px;
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+      
+      .actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="icon">🌊</span>
+    <h1>Stay Focused</h1>
+    <div class="site-name" id="siteName">Site Blocked</div>
+    <div class="message">
+      This site is blocked to help you maintain focus. Take a moment to consider if visiting this site aligns with your current goals.
+    </div>
+    
+    <div class="timer-info" id="timerInfo" style="display: none;">
+      <strong>Current Focus Session</strong><br>
+      <span id="timeRemaining">25:00 remaining</span>
+    </div>
+    
+    <div class="actions">
+      <button class="btn primary" id="backBtn">Go Back</button>
+      <button class="btn" id="disableBtn">Disable Blocker</button>
+      <button class="btn" id="settingsBtn">Settings</button>
+    </div>
+    
+    <div class="quote">
+      "The successful warrior is the average person with laser-like focus." - Bruce Lee
+    </div>
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>

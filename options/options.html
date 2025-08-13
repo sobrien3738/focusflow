@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FocusFlow Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌊 FocusFlow Settings</h1>
+      <p>Customize your productivity experience</p>
+    </div>
+
+    <div class="content">
+      <!-- Timer Settings -->
+      <div class="section">
+        <h2>⏰ Timer Settings</h2>
+        <div class="setting-group">
+          <div class="setting">
+            <label for="focusTime">Focus Duration</label>
+            <div class="input-group">
+              <input type="number" id="focusTime" min="1" max="90" value="25">
+              <span>minutes</span>
+            </div>
+            <small>How long should each focus session last?</small>
+          </div>
+          
+          <div class="setting">
+            <label for="breakTime">Break Duration</label>
+            <div class="input-group">
+              <input type="number" id="breakTime" min="1" max="60" value="5">
+              <span>minutes</span>
+            </div>
+            <small>How long should each break last?</small>
+          </div>
+          
+          <div class="setting">
+            <label for="longBreakTime">Long Break Duration</label>
+            <div class="input-group">
+              <input type="number" id="longBreakTime" min="5" max="60" value="15">
+              <span>minutes</span>
+            </div>
+            <small>Long break after every 4 sessions</small>
+          </div>
+          
+          <div class="setting">
+            <div class="checkbox-group">
+              <input type="checkbox" id="autoStartBreak">
+              <label for="autoStartBreak">Auto-start breaks</label>
+            </div>
+            <small>Automatically start break timer after focus sessions</small>
+          </div>
+          
+          <div class="setting">
+            <div class="checkbox-group">
+              <input type="checkbox" id="notificationsEnabled" checked>
+              <label for="notificationsEnabled">Enable notifications</label>
+            </div>
+            <small>Get notified when sessions complete</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Website Blocking Settings -->
+      <div class="section">
+        <h2>🚫 Website Blocking</h2>
+        <div class="setting-group">
+          <div class="setting">
+            <div class="checkbox-group">
+              <input type="checkbox" id="blockDuringFocus">
+              <label for="blockDuringFocus">Block sites during focus sessions</label>
+            </div>
+            <small>Automatically enable blocking when focus timer starts</small>
+          </div>
+          
+          <div class="setting">
+            <div class="checkbox-group">
+              <input type="checkbox" id="strictMode">
+              <label for="strictMode">Strict mode</label>
+            </div>
+            <small>Make it harder to disable blocking during active sessions</small>
+          </div>
+          
+          <div class="setting">
+            <label>Blocked Sites</label>
+            <div class="blocked-sites-manager">
+              <div class="site-input">
+                <input type="text" id="newSiteInput" placeholder="Enter domain (e.g., youtube.com)">
+                <button id="addSiteBtn" class="btn primary">Add Site</button>
+              </div>
+              <div class="site-categories">
+                <button class="category-btn" data-category="social">+ Social Media</button>
+                <button class="category-btn" data-category="entertainment">+ Entertainment</button>
+                <button class="category-btn" data-category="news">+ News Sites</button>
+                <button class="category-btn" data-category="shopping">+ Shopping</button>
+              </div>
+              <div class="current-sites" id="currentSites">
+                <!-- Sites will be populated here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Management Settings -->
+      <div class="section">
+        <h2>📑 Tab Management</h2>
+        <div class="setting-group">
+          <div class="setting">
+            <div class="checkbox-group">
+              <input type="checkbox" id="autoGroupSimilar">
+              <label for="autoGroupSimilar">Auto-group similar tabs</label>
+            </div>
+            <small>Automatically group tabs from the same domain</small>
+          </div>
+          
+          <div class="setting">
+            <div class="checkbox-group">
+              <input type="checkbox" id="warnBeforeClosing">
+              <label for="warnBeforeClosing">Warn before closing multiple tabs</label>
+            </div>
+            <small>Show confirmation when closing more than 5 tabs</small>
+          </div>
+          
+          <div class="setting">
+            <label for="maxTabs">Maximum tabs warning</label>
+            <div class="input-group">
+              <input type="number" id="maxTabs" min="10" max="100" value="20">
+              <span>tabs</span>
+            </div>
+            <small>Show warning when you have this many tabs open</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appearance Settings -->
+      <div class="section">
+        <h2>🎨 Appearance</h2>
+        <div class="setting-group">
+          <div class="setting">
+            <label for="theme">Theme</label>
+            <select id="theme">
+              <option value="default">Ocean Blue</option>
+              <option value="forest">Forest Green</option>
+              <option value="sunset">Sunset Orange</option>
+              <option value="minimal">Minimal</option>
+            </select>
+            <small>Choose your preferred color scheme</small>
+          </div>
+          
+          <div class="setting">
+            <div class="checkbox-group">
+              <input type="checkbox" id="showBadgeCount">
+              <label for="showBadgeCount">Show timer on extension icon</label>
+            </div>
+            <small>Display remaining time on the extension badge</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data & Privacy -->
+      <div class="section">
+        <h2>🔒 Data & Privacy</h2>
+        <div class="setting-group">
+          <div class="setting">
+            <div class="checkbox-group">
+              <input type="checkbox" id="collectStats">
+              <label for="collectStats">Collect usage statistics</label>
+            </div>
+            <small>Help improve FocusFlow by sharing anonymous usage data</small>
+          </div>
+          
+          <div class="setting">
+            <button id="exportData" class="btn secondary">Export Data</button>
+            <button id="importData" class="btn secondary">Import Data</button>
+            <small>Backup or restore your settings and blocked sites</small>
+          </div>
+          
+          <div class="setting">
+            <button id="resetSettings" class="btn danger">Reset All Settings</button>
+            <small>Reset FocusFlow to default settings</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="status" id="status"></div>
+      <div class="actions">
+        <button id="saveBtn" class="btn primary large">Save Settings</button>
+        <button id="resetBtn" class="btn secondary">Reset to Defaults</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="importFile" accept=".json" style="display: none;">
+  <script src="options.js"></script>
+</body>
+</html>
