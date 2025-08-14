@@ -1,14 +1,14 @@
-# Privacy Policy for FocusFlow Chrome Extension
+# Privacy Policy for ProductiFlow Chrome Extension
 
 **Last Updated: [Current Date]**
 
 ## Overview
-FocusFlow is committed to protecting your privacy. This privacy policy explains how our Chrome extension collects, uses, and protects your information.
+ProductiFlow is committed to protecting your privacy. This privacy policy explains how our Chrome extension collects, uses, and protects your information.
 
 ## Information We Collect
 
 ### Locally Stored Data
-FocusFlow stores the following data locally in your browser using Chrome's storage API:
+ProductiFlow stores the following data locally in your browser using Chrome's storage API:
 - Timer preferences (focus duration, break duration)
 - Blocked website lists
 - Extension settings and preferences
@@ -53,7 +53,7 @@ You can:
 - Uninstall the extension to remove all data
 
 ## Website Blocking
-- FocusFlow only checks if websites match your blocked site list
+- ProductiFlow only checks if websites match your blocked site list
 - No browsing data is stored or transmitted
 - Blocking is performed locally in your browser
 
